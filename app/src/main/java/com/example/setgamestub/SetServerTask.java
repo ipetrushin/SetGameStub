@@ -29,7 +29,10 @@ class SetServerTask extends AsyncTask<Request, Void, Response> {
             urlConnection.setDoOutput(true); // setting POST method
             OutputStream out = urlConnection.getOutputStream();
             // сериализованный объект-запрос пишем в поток
-            out.write(gson.toJson(req).getBytes());
+            String outJSON = gson.toJson(req);
+            Log.d("mytag", "out: "+outJSON);
+            out.write(outJSON.getBytes());
+
             InputStream stream = urlConnection.getInputStream();
             Response response = gson.fromJson(new InputStreamReader(stream), Response.class);
             return response;

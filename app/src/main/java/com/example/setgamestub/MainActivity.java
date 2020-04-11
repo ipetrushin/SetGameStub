@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
         task.execute(req);
     }
 
+    // TODO: предусмотреть текстовое поле для имени игрока
+    // TODO: добавить кнопки для регистрации и отправки карт
+    // TODO: отобразить число очков игрока
+
 }
